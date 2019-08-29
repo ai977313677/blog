@@ -51,21 +51,27 @@ export class Some implements OnInit {
 ```
 
 这段代码写完会报一个错:
+
 > Property 'value' does not exist on type 'HTMLElement'
 > 不要紧，即使有错误提示，我们依旧可以运行并得到正确的结果。如果想在ts文件编译失败时不生成js文件，可以通过配置实现。
 
 [HTMLElement](https://www.w3school.com.cn/xmldom/dom_htmlelement.asp)是什么？这是一个对象，它包含了所有HTML元素公有的属性。
+
 关于HTMLElement的详细内容以及浏览器的兼容，可以查看[MDN的这篇文章](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement)
+
 来看一张图：
-![js的继承关系]()
+
+![js的继承关系](./img/js类间的继承.png)
+
 图源自nanaistaken的[博客](https://segmentfault.com/a/1190000009863666)。
 
 > 如果你恰好有一点面向对象编程的知识，那么这张图就很容易理解，没有也没关系，毕竟无论是js还是ts，现在都增加了class关键字，引入了类的思想。
 
 经过上面的分析，我们能够知道：```getElementXXX()```返回的是一个HTMLElement对象，而这个对象包含了所有DOM元素的公有属性。而每种不同类别的DOM元素，又有自己的特性，也就是图中的子类。
+
 > ts会做编译检查，所以会有错误提示，而js则不检查，所以这也会留下安全隐患。
 
-到这里，其实已经明白了现在这种情况该怎么解决以及以后该怎么使用getElementXXX函数了。
+到这里，其实应该已经明白了现在这种情况该怎么解决以及以后该怎么使用getElementXXX函数了。
 
 修改后的代码：
 
@@ -90,4 +96,5 @@ export class Some implements OnInit {
 # 总结
 
 HTMLElement是DOM结点共有的属性，TypeScript库中抽取该属性作为一个公共接口，类似于其他面向对象语言如Java和c++中所说的基类。这样做可以保证在操作DOM结点的时候不会出现访问不存在属性的问题。
+
 HTMLInputElement是HTMLElement的一个子接口（或说子类，但TypeScript是支持class的，所以说接口更好一些），其内部封装了如input，textarea这类dom结点的属性。
