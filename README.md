@@ -11,6 +11,8 @@
 
 - [ ] 部份css样式详解(附实际应用)
 
+- [ ] JavaScript学习总结
+
 - [ ] angular中的forRoot和forChild
 
 - [ ] angular路由匹配
