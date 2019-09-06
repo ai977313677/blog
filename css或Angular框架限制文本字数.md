@@ -86,6 +86,8 @@ export class clipPipe implements PipeTransform {
 
 通过管道的方式，我们可以直接输出截断后的数据，当然也有其他方式，但是我也没有想到其他比较好的方法。
 
+> 如果你有好的方法，可以留言评论，我尝试一下，嘿嘿
+
 ![难过](./img/难过.png)
 
 # 总结
