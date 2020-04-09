@@ -15,16 +15,11 @@
 
 - [x] 《你不知道的JavaScript》笔记（一）
 
+- [x] canvas技术分享
+
+- [x] 前端缓存技术概述
+
 ## 待完成部分
-
-- [ ] JavaScript学习总结
-
-- [ ] angular中的forRoot和forChild
-
-- [ ] angular路由匹配
-
-- [ ] js模块
 
 - [ ] 数据结构碎碎念（三）
 
-- [ ] 拦截器问题
